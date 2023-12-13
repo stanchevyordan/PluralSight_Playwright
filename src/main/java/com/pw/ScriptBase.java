@@ -6,8 +6,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-public class ScriptBase {
-    protected String home = "file:///" + System.getProperty("user.dir") + "\\src\\web\\home.html";
+public abstract class ScriptBase {
+
+    private static final String webDir = "file:///" + System.getProperty("user.dir") + "\\src\\web\\";
+
+    public static final String home = webDir + "home.html";
+    public static String advantages = webDir + "advantages.html";
 
     protected static Playwright playwright;
     protected static Browser browser;
@@ -39,4 +43,5 @@ public class ScriptBase {
     static void closeBrowser() {
         playwright.close();
     }
+
 }
