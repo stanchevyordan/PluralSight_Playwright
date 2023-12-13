@@ -9,8 +9,8 @@ public class AuthenticationRefactored extends AuthScriptBase {
     public void auth() {
         page.navigate("https://github.com");
         // verify things being already logged in
-        page.click("[aria-label=\"View profile and more\"]");
-        page.click("text=Signed in as stanchevyordan");
+        page.click("//button[@aria-label=\"Open user account menu\"]");
+        page.click("text=stanchevyordan");
     }
 
 
@@ -18,7 +18,7 @@ public class AuthenticationRefactored extends AuthScriptBase {
     public void auth2() {
         page.navigate("https://github.com/stanchevyordan");
         // verify things being already logged in
-        page.click("[aria-label=\"View profile and more\"]");
-        page.click("text=Signed in as stanchevyordan");
+        page.click("//button[@aria-label=\"Open user account menu\"]");
+        page.click("text=stanchevyordan");
     }
 }
